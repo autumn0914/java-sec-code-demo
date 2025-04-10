@@ -21,7 +21,7 @@ jobs:
 #  dependsOn: BAC
 #  steps:
   - script: cov-format-errors --dir idir --json-output-v10 issues.json
-  - script: $COVERITY_TOOL_HOME\node\node.exe $COVERITY_TOOL_HOME\SARIF\cov-format-sarif-for-github.js --inputFile issues.json --outputFile issue-report.sarif --githubUrl https://github.com --repoName autumn0914/java-sec-code-demo --checkoutPath autumn0914/java-sec-code-demo . 033dbbad71a9d2923ac6cca7b3c62e8d4aa1e5ef
+  - script: C:\Test\cov-analysis-win64-2024.9.1\node\node.exe C:\Test\cov-analysis-win64-2024.9.1\SARIF\cov-format-sarif-for-github.js --inputFile issues.json --outputFile issue-report.sarif --githubUrl https://github.com --repoName autumn0914/java-sec-code-demo --checkoutPath autumn0914/java-sec-code-demo . 033dbbad71a9d2923ac6cca7b3c62e8d4aa1e5ef
   - script: tar -a -c -f  CodeAnalysisLogs.zip issue-report.sarif
   - task: PublishBuildArtifacts@1
     displayName: 'Publish SARIF Report'
