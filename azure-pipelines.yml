@@ -1,0 +1,16 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool: Default
+
+jobs:
+- job: BAC
+  steps:
+  - script: cov-capture --dir idir --source-dir .
+  - script: cov-analyze --dir idir --all
+  - script: cov-commit-defects --dir idir --url https://coverity.field-test.blackduck.com --auth-key-file C:/Test/auth-key.txt --stream java-pipe-ryan
