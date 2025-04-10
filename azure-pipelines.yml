@@ -14,3 +14,8 @@ jobs:
   - script: cov-capture --dir idir --source-dir .
   - script: cov-analyze --dir idir --all
   - script: cov-commit-defects --dir idir --url https://coverity.field-test.blackduck.com --auth-key-file C:/Test/auth-key.txt --stream java-pipe-ryan
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish SARIF Report'
+    inputs:
+      PathtoPublish: 'coverity-report.sarif'
+      ArtifactName: CodeAnalysisLogs
