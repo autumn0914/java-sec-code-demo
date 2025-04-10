@@ -15,7 +15,7 @@ jobs:
 - job: BAC_SARIF
   steps:
   - script: cov-capture --dir idir --source-dir .
-  - script: cov-analyze --dir idir --all
+  - script: cov-analyze --dir idir --all --all-security
   - script: cov-commit-defects --dir idir --url https://coverity.field-test.blackduck.com --auth-key-file C:/Test/auth-key.txt --stream java-pipe-ryan
 #- job: SARIF
 #  dependsOn: BAC
