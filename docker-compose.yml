@@ -10,6 +10,6 @@ services:
             - j_mysql
 
     j_mysql:
-        image: joychou/jsc_mysql:latest
+        image: joychou/jsc_mysql:8.4.1
         ports:
             - "3306:3306"
