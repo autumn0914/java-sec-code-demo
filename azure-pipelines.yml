@@ -28,3 +28,8 @@ jobs:
     inputs:
       PathtoPublish: 'issue-report.sarif'
       ArtifactName: CodeAnalysisLogs
+
+- job: SCA
+  displayName: 'SCA Analysis'
+  steps:
+    - script: java -jar C:\Test\BDDetect\detect-10.3.0.jar --blackduck.url=https://sca.demo.blackduck.com --blackduck.trust.cert=true --blackduck.api.token=NmUyNjJlOTgtZWIyYi00YWY3LTg1YTYtMWQ0NDQzODNkNTk2Ojc2ZTdiYjE5LWRmZDYtNDQ2Ny05YmFlLTgwY2RjMGUwZWM4Zg==  --detect.source.path=$(System.DefaultWorkingDirectory) --detect.project.name=InsecBank --detect.project.version.name=2.0
